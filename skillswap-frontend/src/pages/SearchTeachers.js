@@ -1,5 +1,5 @@
 // pages/SearchTeachers.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { skillsAPI, sessionsAPI } from '../services/api';
 import { toast } from 'react-toastify';
 import { Search, Star, Briefcase, Award, Clock } from 'lucide-react';

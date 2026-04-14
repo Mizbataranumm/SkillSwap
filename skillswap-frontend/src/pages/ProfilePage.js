@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { userAPI } from '../services/api';
 import { toast } from 'react-toastify';
-import { Edit2, Plus, Trash2, Save, X, User, BookOpen, Briefcase, MapPin } from 'lucide-react';
+import { Edit2, Plus, Trash2, Save, X, User, BookOpen, Briefcase } from 'lucide-react';
 
 const ProfilePage = ({ user, setUser }) => {
   const [profile, setProfile] = useState(null);

@@ -2,11 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { matcherAPI, sessionsAPI, userAPI } from '../services/api';
 import { toast } from 'react-toastify';
-import { Zap, Users, Lightbulb, Award, MessageSquare, Calendar } from 'lucide-react';
+import { Zap, Users, Lightbulb, Award, MessageSquare } from 'lucide-react';
 
 const MatchesPage = () => {
   const [matches, setMatches] = useState(null);
-  const [userProfile, setUserProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('teachers'); // 'teachers' or 'learners'
   const [selectedMatch, setSelectedMatch] = useState(null);
@@ -25,7 +24,6 @@ const MatchesPage = () => {
           matcherAPI.findTeachers()
         ]);
 
-        setUserProfile(profileRes.data);
         setMatches(matchesRes.data);
         setLoading(false);
       } catch (error) {

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { coinsAPI, userAPI, sessionsAPI } from '../services/api';
 import { toast } from 'react-toastify';
-import { Zap, Users, Award, TrendingUp, BookOpen, Briefcase, Clock, Star } from 'lucide-react';
+import { Zap, Award, TrendingUp, BookOpen, Briefcase, Clock, Star } from 'lucide-react';
 
 const Dashboard = ({ user }) => {
   const [balance, setBalance] = useState(null);
