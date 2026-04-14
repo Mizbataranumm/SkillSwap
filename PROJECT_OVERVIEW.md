@@ -51,4 +51,42 @@ To transform SkillSwap into a world-class educational tool, the following featur
 
 ---
 
+---
+
+## 🛠️ Immediate Technical Next Steps
+
+To move from a "Matcher" to a "Functional Classroom," follow this specific technical roadmap:
+
+### 1. The "Classroom" (Video Integration)
+- **Goal**: Provide a "Enter Class" button for both the Teacher and Learner.
+- **Task**: Integrate a WebRTC provider (e.g., **Jitsi Meet API** or **Daily.co**).
+- **Workflow**:
+    - When a session status becomes `Active`, generate a unique Room ID.
+    - Add a `Classroom.js` component with the embedded video frame.
+    - Store the `roomUrl` in the `Session` model.
+
+### 2. Real-Time Interactions (Messaging)
+- **Goal**: Allow users to chat before and during sessions.
+- **Task**: Implement **Socket.io** on the backend for real-time events.
+- **Workflow**:
+    - Create a `Chat` model to store message history.
+    - Create a `ChatOverlay.js` component available on the Dashboard.
+    - Use `socket.emit('send-message', ...)` to sync chat across users.
+
+### 3. Public Professional Profiles
+- **Goal**: allow users to browse potential teachers' full bios and reviews.
+- **Task**: Create a dynamic route `/profile/:userId`.
+- **Workflow**:
+    - Add a new API endpoint `GET /api/users/public/:userId`.
+    - Build a `PublicProfile.js` page that hides sensitive data (email) but shows "Skills I Teach," "Ratings," and "Teaching Experience."
+
+### 4. Session Slot Management
+- **Goal**: Prevent booking overlaps.
+- **Task**: Add a "Schedule" field to the teacher's profile.
+- **Workflow**:
+    - Allow teachers to set "Available Hours."
+    - Update the `requestSession` logic to check against the teacher's schedule.
+
+---
+
 **SkillSwap is not just an app; it's a movement to make the world's knowledge accessible to everyone, for free.** 🤝📈
