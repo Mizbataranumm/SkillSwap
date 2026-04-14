@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { sessionsAPI, coinsAPI, userAPI } from '../services/api';
 import { toast } from 'react-toastify';
-import { Clock, CheckCircle, AlertCircle, Star, MessageSquare } from 'lucide-react';
+import { Clock, Star, MessageSquare } from 'lucide-react';
 
 const SessionsPage = () => {
   const [sessions, setSessions] = useState([]);
@@ -18,7 +18,7 @@ const SessionsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [sessionsRes, profileRes] = await Promise.all([
+        const [, profileRes] = await Promise.all([
           sessionsAPI.getPendingSessions(),
           userAPI.getProfile()
         ]);
@@ -57,7 +57,7 @@ const SessionsPage = () => {
 
   const handleTransferCoins = async (sessionId) => {
     try {
-      const response = await coinsAPI.transferCoins(sessionId);
+      await coinsAPI.transferCoins(sessionId);
       setSessions(sessions.map(s =>
         s._id === sessionId ? { ...s, coinsTransfered: true } : s
       ));
