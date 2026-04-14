@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+skillswap-backend/node_modules/
+skillswap-frontend/node_modules/
+skillswap-frontend/build/
+
+# Environment Variables
+.env
+skillswap-backend/.env
+skillswap-frontend/.env
+
+# System Files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+public/logo.png
