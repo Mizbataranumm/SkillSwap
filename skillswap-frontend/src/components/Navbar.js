@@ -1,7 +1,7 @@
 // components/Navbar.js
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, LogOut, Home, Users, Zap, Award } from 'lucide-react';
+import { Menu, X, LogOut, Home, Users, Award } from 'lucide-react';
 import { useState } from 'react';
 
 const Navbar = ({ user, onLogout }) => {

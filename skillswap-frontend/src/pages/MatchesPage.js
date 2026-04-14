@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { matcherAPI, sessionsAPI, userAPI } from '../services/api';
 import { toast } from 'react-toastify';
-import { Zap, Users, Lightbulb, Award, MessageSquare } from 'lucide-react';
+import { Zap, Lightbulb, Award } from 'lucide-react';
 
 const MatchesPage = () => {
   const [matches, setMatches] = useState(null);
@@ -19,7 +19,7 @@ const MatchesPage = () => {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const [profileRes, matchesRes] = await Promise.all([
+        const [, matchesRes] = await Promise.all([
           userAPI.getProfile(),
           matcherAPI.findTeachers()
         ]);

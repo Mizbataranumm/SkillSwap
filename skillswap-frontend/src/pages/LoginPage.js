@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authAPI } from '../services/api';
 import { toast } from 'react-toastify';
-import { Zap, Mail, Lock } from 'lucide-react';
+import { Mail, Lock } from 'lucide-react';
 
 const LoginPage = ({ onLogin }) => {
   const [email, setEmail] = useState('');

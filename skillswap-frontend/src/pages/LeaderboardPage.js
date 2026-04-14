@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { coinsAPI } from '../services/api';
 import { toast } from 'react-toastify';
-import { Award, Star, TrendingUp, Medal } from 'lucide-react';
+import { Award, Star, TrendingUp } from 'lucide-react';
 
 const LeaderboardPage = () => {
   const [leaderboard, setLeaderboard] = useState([]);
